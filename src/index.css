@@ -3,3 +3,66 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* =========================================
+   CONSTELLATION STARS
+========================================= */
+
+@keyframes constellationTwinkle {
+  0% {
+    opacity: 0.25;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+
+  100% {
+    opacity: 0.25;
+    transform: scale(0.8);
+  }
+}
+
+.constellation-star {
+  animation-name: constellationTwinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+
+  box-shadow:
+    0 0 4px rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes constellationConnect {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  75% {
+    opacity: 0.35;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.constellation-line {
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-width: 0.6;
+
+  animation-name: constellationConnect;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
