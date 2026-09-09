@@ -1,143 +1,222 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import SocialLinks from "../components/SocialLinks";
+import SpaceBackground from "../utils/SpaceBackground";
 
 export default function Home() {
   return (
-    <div className="mt-20" id="home">
-      <div className="flex justify-between py-10 items-center px-5 lg:px-28 lg:flex-row flex-col-reverse">
+    <section
+      id="home"
+      className="
+        relative
+        overflow-hidden
+        bg-[#020617]
+        w-full
+        min-h-screen
+        mt-20
+      "
+    >
 
-        {/* Left Side */}
-        <motion.div
-          className="lg:w-[45%]"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
-        >
+      <SpaceBackground />
 
-          {/* Introduction */}
+      <div className="relative z-10 text-white">
+        <div className="flex justify-between py-10 items-center px-5 lg:px-28 lg:flex-row flex-col-reverse">
+
+
+
           <motion.div
-            className="text-2xl lg:text-5xl flex flex-col mt-8 lg:mt-0 gap-2 lg:gap-5 text-nowrap"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: {
-                opacity: 0,
-                y: 20,
-              },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                  staggerChildren: 0.2,
-                  ease: "easeInOut",
-                },
-              },
+            className="lg:w-[45%]"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 1,
+              ease: "easeInOut",
             }}
           >
 
-            {/* Hello */}
-            <motion.h2
+            {/* Introduction */}
+            <motion.div
+              className="
+                text-2xl
+                lg:text-5xl
+                flex
+                flex-col
+                mt-8
+                lg:mt-0
+                gap-2
+                lg:gap-5
+                text-nowrap
+                text-white
+              "
+              initial="hidden"
+              animate="visible"
               variants={{
-                hidden: { opacity: 0, y: 10 },
-                visible: { opacity: 1, y: 0 },
+                hidden: {
+                  opacity: 0,
+                  y: 20,
+                },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    staggerChildren: 0.2,
+                    ease: "easeInOut",
+                  },
+                },
               }}
             >
-              Hello,
-            </motion.h2>
 
-            {/* Animated Introduction */}
-            <motion.h2
-              variants={{
-                hidden: { opacity: 0, y: 10 },
-                visible: { opacity: 1, y: 0 },
-              }}
-            >
-              <TypeAnimation
-                sequence={[
-                  "I am Arifah Abdulbasit",
-                  1000,
-                  "I am a Software Developer",
-                  1000,
-                  "I am a UI/UX Designer",
-                  1000,
-                ]}
-                speed={10}
-                style={{ fontWeight: 600 }}
-                repeat={Infinity}
-              />
-            </motion.h2>
-
-            {/* Mobile App */}
-            <motion.h2
-              variants={{
-                hidden: { opacity: 0, y: 10 },
-                visible: { opacity: 1, y: 0 },
-              }}
-            >
-              <span className="font-extrabold">
-                Software Developer
-              </span>
-
-              <span
-                className="text-white font-extrabold"
-                style={{
-                  WebkitTextStroke: "1px black",
+              {/* Hello */}
+              <motion.h1
+                className="text-white"
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    y: 10,
+                  },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                  },
                 }}
               >
-                Developer
-              </span>
-              
-            </motion.h2>
+                Hello,
+              </motion.h1>
 
-            {/* Location */}
-            <motion.h2
-              variants={{
-                hidden: { opacity: 0, y: 10 },
-                visible: { opacity: 1, y: 0 },
+              {/* Animated Introduction */}
+              <motion.h2
+                className="text-white"
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    y: 10,
+                  },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                  },
+                }}
+              >
+                <TypeAnimation
+                  sequence={[
+                    "I am Arifah Abdulbasit",
+                    1000,
+                    "I am a Software Developer",
+                    1000,
+                    "I am a UI/UX Designer",
+                    1000,
+                  ]}
+                  speed={10}
+                  style={{
+                    fontWeight: 600,
+                    color: "white",
+                  }}
+                  repeat={Infinity}
+                />
+              </motion.h2>
+
+              {/* Software Developer */}
+              <motion.h1
+                className="text-white"
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    y: 10,
+                  },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                  },
+                }}
+              >
+                <span className="font-extrabold text-white">
+                  Software
+                </span>{" "}
+
+                <span
+                  className="text-white font-extrabold"
+                  style={{
+                    WebkitTextStroke: "1px white",
+                  }}
+                >
+                  Developer
+                </span>
+              </motion.h1>
+
+              {/* Location */}
+              <motion.h1
+                className="text-white"
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    y: 10,
+                  },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                  },
+                }}
+              >
+                Based In{" "}
+                <span className="font-extrabold text-white">
+                  Philippines.
+                </span>
+              </motion.h1>
+
+            </motion.div>
+
+            {/* =====================================================
+                SOCIAL LINKS
+            ===================================================== */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 10,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 0.8,
+                duration: 1,
               }}
             >
-              Based In{" "}
-              <span className="font-extrabold">
-                Philippines.
-              </span>
-            </motion.h2>
+              <SocialLinks />
+            </motion.div>
 
           </motion.div>
 
-          {/* Social Links */}
+          {/* =====================================================
+              RIGHT SIDE - VECTOR
+          ===================================================== */}
+
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
+            className="lg:w-[65%] w-full relative"
+            initial={{
+              opacity: 0,
+              x: 50,
+            }}
+            animate={{
+              opacity: 1,
+              x: 0,
+            }}
             transition={{
-              delay: 0.8,
               duration: 1,
+              ease: "easeInOut",
             }}
           >
-            <SocialLinks />
+            <img
+              className="w-full object-contain relative lg:left-10"
+              src="/assets/about-vector.png"
+              alt="Hero Vector"
+            />
           </motion.div>
 
-        </motion.div>
-
-        {/* Right Side - Vector */}
-        <motion.div
-          className="lg:w-[65%] w-full"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{
-            duration: 1,
-            ease: "easeInOut",
-          }}
-        >
-          <img
-            className="h-full w-full"
-            src="/assets/about-vector.png"
-            alt="Hero Vector"
-          />
-        </motion.div>
-
+        </div>
       </div>
-    </div>
+
+    </section>
   );
 }
