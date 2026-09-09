@@ -29,7 +29,7 @@ export default function Home() {
             </motion.div>
           </motion.div>
           <motion.div className="lg:w-[55%] w-full relative" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeInOut" }}>
-            <img className="w-[85%] object-contain relative lg:-left-8 drop-shadow-[0_0_30px_rgba(217,70,239,0.8)]" src="/assets/about-vector.png" alt="Home Vector" />
+            <img className="w-[85%] object-contain relative lg:-left-8 drop-shadow-[0_0_20px_rgba(217,70,239,0.5)]" src="/assets/about-vector.png" alt="Home Vector" />
           </motion.div>
         </div>
       </div>
