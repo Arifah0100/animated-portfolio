@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { BiLogoGmail } from "react-icons/bi";
-import { BsGithub } from "react-icons/bs";
+import { BsGithub , BsDiscord} from "react-icons/bs";
 
 export default function SocialLinks() {
   const socialLinks = [
@@ -18,25 +18,19 @@ export default function SocialLinks() {
       icon: BsGithub,
       url: "https://github.com/Arifah0100",
     },
+    {
+      icon: BsDiscord,
+      url: "https://discordapp.com/users/1460842417207906421",
+    },
   ];
 
   return (
     <div className="flex items-center gap-x-5 mt-10 lg:mt-14">
       {socialLinks.map(({ icon: Icon, url }, index) => (
-        <motion.a
-          key={index}
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-white p-2 lg:p-3 rounded border-2 border-black"
-          whileHover={{
-            scale: 1.1,
-            backgroundColor: "#000",
-            color: "#fff",
-          }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <Icon className="w-4 h-4 lg:w-5 lg:h-5" />
+        <motion.a key={index} href={url} data-cursor="card" className="relative group p-3 rounded-xl bg-white/5 border border-purple-500/20 text-white/70 overflow-hidden transition-all duration-300" whileHover={{ scale: 1.1, y: -3 }} whileTap={{ scale: 0.9 }}>
+                         
+          <span className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/20 via-purple-500/10 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                          <Icon className="relative z-10 w-5 h-5 group-hover:text-cyan-300 transition-colors duration-300" />
         </motion.a>
       ))}
     </div>
