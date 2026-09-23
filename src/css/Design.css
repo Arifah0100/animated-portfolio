@@ -1,0 +1,68 @@
+
+.skill-card {
+  @apply flex-shrink-0 bg-transparent text-white/70 border-2 border-fuchsia-400/60 cursor-pointer rounded-lg p-3 h-24 w-24 lg:h-32 lg:w-32 flex flex-col items-center justify-center gap-2 lg:gap-3 transition-all duration-300;
+}
+
+.skill-card:hover {
+  @apply bg-gradient-to-r from-purple-700 to-fuchsia-500 text-white border-fuchsia-400;
+}
+
+.skill-icon {
+  @apply text-2xl lg:text-3xl transition-all duration-300;
+}
+
+.skill-name {
+  @apply text-xs lg:text-sm font-bold text-center;
+}
+
+.timeline-dot {
+  @apply w-5 h-5 rounded-full bg-fuchsia-500 border-4 border-[#020617] shadow-[0_0_0_3px_#d946ef];
+}
+
+.timeline-dot-mobile {
+  @apply w-5 h-5;
+}
+
+.timeline-date {
+  @apply mb-5 flex;
+}
+
+.timeline-date span {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-700 to-fuchsia-500 text-white font-semibold text-sm lg:text-base shadow-lg whitespace-nowrap;
+}
+
+.timeline-card {
+  @apply relative bg-[#18181B]/90 backdrop-blur-sm border border-[#3F3F46] rounded-xl p-5 lg:p-7 shadow-xl transition-all duration-300;
+}
+
+.timeline-card:hover {
+  @apply border-fuchsia-500 bg-[#27272A]/90;
+}
+
+.timeline-card-dot {
+  @apply absolute top-6 w-2 h-2 rounded-full bg-fuchsia-500;
+}
+
+.timeline-logo {
+  @apply w-12 h-12 rounded-lg bg-white flex items-center justify-center overflow-hidden shrink-0;
+}
+
+.timeline-logo img {
+  @apply w-9 h-9 object-contain;
+}
+
+.timeline-role {
+  @apply text-white text-lg lg:text-xl font-bold;
+}
+
+.timeline-company {
+  @apply text-fuchsia-400 text-sm lg:text-base font-medium;
+}
+
+.timeline-description {
+  @apply text-[#A1A1AA] mt-5 text-sm lg:text-base leading-7 font-light;
+}
+
+.timeline-link {
+  @apply mt-5 text-fuchsia-400 font-medium text-sm;
+}

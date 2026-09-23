@@ -1,118 +1,8 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaDatabase, FaJava, FaUnity, FaHtml5 } from "react-icons/fa";
-import { RiNextjsFill, RiFirebaseFill } from "react-icons/ri";
-import { CgFigma } from "react-icons/cg";
-import { SiAndroidstudio, SiXcode, SiJetbrains, SiMysql, SiCplusplus, SiSwift } from "react-icons/si";
-import { DiCss3 } from "react-icons/di";
-import { PiFileCSharpLight } from "react-icons/pi";
+import { skills, experiences } from "../content/skills";
+import "../css/Design.css";
 
 export default function Skills() {
-  const [skills] = useState([
-    {
-      id: 1,
-      name: "C#",
-      icon: <PiFileCSharpLight size={50} />
-    },
-    {
-      id: 2,
-      name: "C++",
-      icon: <SiCplusplus size={50} />
-    },
-    {
-      id: 3,
-      name: "MySQL",
-      icon: <SiMysql size={50} />
-    },
-    {
-      id: 4,
-      name: "Swift",
-      icon: <SiSwift size={50} />
-    },
-    {
-      id: 5,
-      name: "Objective-C",
-      icon: <FaDatabase size={50} />
-    },
-    {
-      id: 6,
-      name: "Java",
-      icon: <FaJava size={50} />
-    },
-    {
-      id: 7,
-      name: "Unity",
-      icon: <FaUnity size={50} />
-    },
-    {
-      id: 8,
-      name: "Javascript",
-      icon: <RiNextjsFill size={50} />
-    },
-    {
-      id: 9,
-      name: "Android Studio",
-      icon: <SiAndroidstudio size={50} />
-    },
-    {
-      id: 10,
-      name: "TypeScript",
-      icon: <CgFigma size={50} />
-    },
-    {
-      id: 11,
-      name: "JetBrain",
-      icon: <SiJetbrains size={50} />
-    },
-    {
-      id: 12,
-      name: "Firebase",
-      icon: <RiFirebaseFill size={50} />
-    },
-    {
-      id: 13,
-      name: "Xcode",
-      icon: <SiXcode size={50} />
-    },
-    {
-      id: 14,
-      name: "HTML",
-      icon: <FaHtml5 size={50} />
-    },
-    {
-      id: 15,
-      name: "CSS",
-      icon: <DiCss3 size={50} />
-    },
-  ]);
-
-  const [experiences] = useState([
-    {
-      id: 1,
-      company: "EasyBus PH",
-      role: "iOS Developer",
-      period: "July 2026 - Present",
-      description: "Develop and maintain iOS applications using Swift and Xcode. Build responsive and user-friendly interfaces with SwiftUI, implement app features and API integrations, and troubleshoot bugs and performance issues. Focus on writing clean, reusable code while improving application functionality and user experience.",
-      logo: "/assets/Easybus-logo.jpeg"
-    },
-    {
-      id: 2,
-      company: "Kooapps",
-      role: "Mobile App Developer",
-      period: "June 2023 - Dec 2025",
-      description: "Developed and maintained mobile applications while working on new features, UI improvements, debugging, and application performance. Collaborated with team members to implement reliable and user-friendly mobile experiences.",
-      logo: "/assets/kooapps-logo.png"
-    },
-    {
-      id: 3,
-      company: "Ascenders Business Services OPC",
-      role: "IT Intern",
-      period: "Sept 2022 - Dec 2022",
-      description: "Assisted with IT-related tasks, software troubleshooting, system support, and technical documentation. Gained practical experience in maintaining systems and supporting day-to-day technology operations.",
-      logo: "/assets/ascenders-logo.png"
-    },
-  ]);
-
   return (
     <div className="mt-3 lg:mt-16" id="skills">
       <div className="px-5 lg:px-28">
@@ -120,13 +10,24 @@ export default function Skills() {
           My <span className="font-extrabold">Skills</span>
         </motion.h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5 text-lg font-bold mt-7 lg:mt-16 w-full place-items-center gap-y-6 lg:gap-y-12">
-          {skills.map((skill) => (
-            <motion.div key={skill.id} className="bg-gradient-to-r from-purple-700 to-fuchsia-500 text-white border-2 border-fuchsia-400 hover:from-fuchsia-500 hover:to-purple-700 transition-all cursor-pointer rounded p-3 h-36 w-36 lg:h-44 lg:w-44 flex flex-col items-center justify-center gap-5 shadow-[0_0_20px_rgba(217,70,239,0.25)]" initial={{ opacity: 0, y: 5 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut", delay: skill.id * 0.1 }} viewport={{ once: true }}>
-              {skill.icon}
-              <p>{skill.name}</p>
-            </motion.div>
-          ))}
+        <div className="mt-7 lg:mt-10 overflow-hidden space-y-5 lg:space-y-8 w-full">
+          <motion.div className="flex gap-4 lg:gap-6 w-max" animate={{ x: ["0%", "-50%"] }} transition={{ duration: 45, repeat: Infinity, ease: "linear" }}>
+            {[...skills, ...skills].map((skill, index) => (
+              <motion.div key={`row1-${index}`} whileHover={{ scale: 1.12, zIndex: 10 }} transition={{ duration: 0.2 }} className="skill-card">
+                <div className="skill-icon">{skill.icon}</div>
+                <p className="skill-name">{skill.name}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div className="flex gap-4 lg:gap-6 w-max" animate={{ x: ["-50%", "0%"] }} transition={{ duration: 45, repeat: Infinity, ease: "linear" }}>
+            {[...skills, ...skills].map((skill, index) => (
+              <motion.div key={`row2-${index}`} whileHover={{ scale: 1.12, zIndex: 10 }} transition={{ duration: 0.2 }} className="skill-card">
+                <div className="skill-icon">{skill.icon}</div>
+                <p className="skill-name">{skill.name}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
 
@@ -150,7 +51,7 @@ export default function Skills() {
                   </div>
 
                   <div className="relative hidden lg:flex justify-center">
-                    <motion.div className="z-10 w-5 h-5 rounded-full bg-fuchsia-500 border-4 border-[#020617] shadow-[0_0_0_3px_#d946ef]" initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ duration: 0.5, delay: index * 0.15 }} viewport={{ once: true }} />
+                    <motion.div className="timeline-dot z-10" initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ duration: 0.5, delay: index * 0.15 }} viewport={{ once: true }} />
                   </div>
 
                   <div className="hidden lg:block">
@@ -158,8 +59,7 @@ export default function Skills() {
                   </div>
 
                   <div className="lg:hidden relative pl-12">
-                    <motion.div className="absolute left-[13px] top-5 z-10 w-5 h-5 rounded-full bg-fuchsia-500 border-4 border-[#020617] shadow-[0_0_0_3px_#d946ef]" initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ duration: 0.5 }} viewport={{ once: true }} />
-
+                    <motion.div className="timeline-dot timeline-dot-mobile absolute left-[13px] top-5 z-10" initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ duration: 0.5 }} viewport={{ once: true }} />
                     <TimelineDate period={exp.period} align="left" />
                     <TimelineCard exp={exp} align="left" index={index} />
                   </div>
@@ -175,48 +75,30 @@ export default function Skills() {
 
 function TimelineDate({ period, align = "left" }) {
   return (
-    <div className={`mb-5 ${align === "right" ? "flex justify-end" : "flex justify-start"}`}>
-      <span className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-700 to-fuchsia-500 text-white font-semibold text-sm lg:text-base shadow-lg whitespace-nowrap">
-        {period}
-      </span>
+    <div className={`timeline-date ${align === "right" ? "justify-end" : "justify-start"}`}>
+      <span>{period}</span>
     </div>
   );
 }
 
 function TimelineCard({ exp, align = "left", index }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: align === "right" ? 30 : -30 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.7, delay: index * 0.15, ease: "easeOut" }}
-      viewport={{ once: true }}
-      className={`relative bg-[#18181B]/90 backdrop-blur-sm border border-[#3F3F46] rounded-xl p-5 lg:p-7 shadow-xl hover:border-fuchsia-500 hover:bg-[#27272A]/90 transition-all duration-300 ${align === "right" ? "text-right" : "text-left"}`}
-    >
-      <div className={`absolute top-6 w-2 h-2 rounded-full bg-fuchsia-500 ${align === "right" ? "-right-1" : "-left-1"} hidden lg:block`} />
+    <motion.div initial={{ opacity: 0, x: align === "right" ? 30 : -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: index * 0.15, ease: "easeOut" }} viewport={{ once: true }} className={`timeline-card ${align === "right" ? "text-right" : "text-left"}`}>
+      <div className={`timeline-card-dot ${align === "right" ? "-right-1" : "-left-1"} hidden lg:block`} />
 
       <div className={`flex items-center gap-4 ${align === "right" ? "justify-end" : "justify-start"}`}>
-        <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center overflow-hidden shrink-0">
-          <img src={exp.logo} alt={`${exp.company} logo`} className="w-9 h-9 object-contain" />
+        <div className="timeline-logo">
+          <img src={exp.logo} alt={`${exp.company} logo`} />
         </div>
 
         <div>
-          <h3 className="text-white text-lg lg:text-xl font-bold">
-            {exp.role}
-          </h3>
-
-          <p className="text-fuchsia-400 text-sm lg:text-base font-medium">
-            {exp.company}
-          </p>
+          <h3 className="timeline-role">{exp.role}</h3>
+          <p className="timeline-company">{exp.company}</p>
         </div>
       </div>
 
-      <p className={`text-[#A1A1AA] mt-5 text-sm lg:text-base leading-7 font-light ${align === "right" ? "text-right" : "text-left"}`}>
-        {exp.description}
-      </p>
-
-      <div className={`mt-5 text-fuchsia-400 font-medium text-sm ${align === "right" ? "text-right" : "text-left"}`}>
-        View Experience →
-      </div>
+      <p className={`timeline-description ${align === "right" ? "text-right" : "text-left"}`}>{exp.description}</p>
+      <div className={`timeline-link ${align === "right" ? "text-right" : "text-left"}`}>View Experience →</div>
     </motion.div>
   );
 }

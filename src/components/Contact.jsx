@@ -1,17 +1,13 @@
 
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { BiLogoGmail } from "react-icons/bi";
-import { BsGithub } from "react-icons/bs";
-import { IoLogoLinkedin, IoLogoTwitter } from "react-icons/io5";
 import { IoMdMail } from "react-icons/io";
 import { FaPhone } from "react-icons/fa6";
+import SocialLinks from "../components/SocialLinks";
 
 export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
-
-  const socialIcons = [BiLogoGmail, IoLogoLinkedin, IoLogoTwitter, BsGithub];
 
   return (
     <motion.section ref={ref} initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : { opacity: 0 }} transition={{ duration: 0.8 }} className="relative overflow-hidden bg-[#020617] text-white lg:my-16 my-8 px-5 lg:px-28 py-16 lg:py-20" id="contact">
@@ -37,12 +33,9 @@ export default function Contact() {
               </motion.button>
 
               <div className="flex items-center gap-3">
-                {socialIcons.map((Icon, index) => (
-                  <motion.a key={index} href="#" data-cursor="card" className="relative group p-3 rounded-xl bg-white/5 border border-purple-500/20 text-white/70 overflow-hidden transition-all duration-300" whileHover={{ scale: 1.1, y: -3 }} whileTap={{ scale: 0.9 }}>
-                    <span className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/20 via-purple-500/10 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                    <Icon className="relative z-10 w-5 h-5 group-hover:text-cyan-300 transition-colors duration-300" />
-                  </motion.a>
-                ))}
+                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8, duration: 1 }}>
+                              <SocialLinks />
+                            </motion.div>
               </div>
             </motion.div>
           </form>
@@ -68,7 +61,7 @@ export default function Contact() {
               <span className="p-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 group-hover:border-cyan-400/60 group-hover:bg-cyan-500/20 transition-all duration-300">
                 <FaPhone className="w-3 h-3 lg:w-4 lg:h-4 text-cyan-300" />
               </span>
-              1234567890
+              +63 912 155 3815
             </motion.a>
           </div>
         </motion.div>

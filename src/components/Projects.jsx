@@ -5,15 +5,15 @@ import { motion } from 'framer-motion';
 const projects = [
   {
     id: 1,
-    title: "Crypto Screener Application",
-    description: "A powerful tool for tracking and analyzing cryptocurrency trends in real-time.",
+    title: "Web-based Election Management System",
+    description: "It is a software development project for the MSU-Marawi campus that focuses on an online voting system. This system is accessible via the web on both desktop computers and smartphones. Depending on their user status, the users will log in with their credentials to access the system as an administrator, a voter, a representative, or a prime minister.",
     image: "/assets/project1.png",
     link: "#"
   },
   {
     id: 2,
-    title: "Stock Market Dashboard",
-    description: "An interactive dashboard to monitor stock prices and market trends efficiently.",
+    title: "Zendoku - Puzzle block game",
+    description: "Contributed to the development of ZenDoku, a mobile puzzle game at Kooapps, working alongside the development team to build and refine gameplay features, improve user experience, fix bugs, and help deliver a polished and engaging game for players.",
     image: "/assets/project1.png",
     link: "#"
   }
@@ -21,7 +21,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div className="bg-black px-5 lg:px-28 py-8 my-8 lg:py-16 lg:my-16" id="projects">
+    <div className="px-5 lg:px-28 py-8 my-8 lg:py-16 lg:my-16" id="projects">
       <h2 className="text-2xl lg:text-4xl text-center text-white">
         My <span className="font-extrabold">Projects</span>
       </h2>
@@ -59,7 +59,7 @@ export default function Projects() {
             </div>
           </motion.div>
         ))}
-      </div>
+      </div> 
     </div>
   );
 }

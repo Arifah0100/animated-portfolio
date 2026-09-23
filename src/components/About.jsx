@@ -8,20 +8,16 @@ export default function About() {
       id="about"
     >
       <motion.div
-        className="lg:w-1/2 flex items-center"
+        className="lg:w-1/2 flex items-center -mt-6 lg:-mt-16"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{
-          type: "spring",
-          stiffness: 80,
-          damping: 10
-        }}
+        transition={{ type: "spring", stiffness: 80, damping: 10 }}
         viewport={{ once: true }}
       >
         <img
           src="/assets/about-me.png"
           alt="About Me Illustration"
-          className="w-full"
+          className="w-[75%] mx-auto"
         />
       </motion.div>
 
@@ -88,6 +84,7 @@ export default function About() {
           <FiDownload />
           Download CV
         </a>
+        
       </motion.div>
     </div>
   );
