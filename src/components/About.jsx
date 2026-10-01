@@ -15,11 +15,10 @@ export default function About() {
         viewport={{ once: true }}
       >
         <img
-          src="/assets/about-me.png"
+          src={`${import.meta.env.BASE_URL}assets/about-me.png`}
           alt="About Me Illustration"
           className="w-[75%] mx-auto"
         />
-      </motion.div>
 
       <motion.div
         className="lg:w-1/2 text-white"
