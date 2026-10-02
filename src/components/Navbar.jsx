@@ -46,7 +46,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <motion.a href="" className="hidden relative lg:inline-block px-5 py-2.5 font-medium group rounded-lg overflow-hidden" whileHover={{ scale: 1.05 }}>
+        <motion.a href="https://drive.google.com/uc?export=download&id=1TFfWY0-gqW9Eme3rq62BbNroKLmREcgE" className="hidden relative lg:inline-block px-5 py-2.5 font-medium group rounded-lg overflow-hidden" whileHover={{ scale: 1.05 }}>
           <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-purple-500 via-fuchsia-500 to-pink-500 p-[1px]">
             <span className="block w-full h-full rounded-lg bg-[#020617]"></span>
           </span>
@@ -73,7 +73,7 @@ export default function Navbar() {
                   </button>
                 </motion.li>
               ))}
-              <motion.a href="" className="relative inline-block px-4 py-2 font-semibold group" whileHover={{ scale: 1.1 }}>
+              <motion.a href="https://drive.google.com/uc?export=download&id=1TFfWY0-gqW9Eme3rq62BbNroKLmREcgE" className="relative inline-block px-4 py-2 font-semibold group" whileHover={{ scale: 1.1 }}>
                 <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-gradient-to-r from-fuchsia-500 to-purple-500 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
                 <span className="absolute inset-0 w-full h-full bg-[#020617] border border-purple-400/70 group-hover:bg-gradient-to-r group-hover:from-fuchsia-500 group-hover:to-purple-500 transition-all duration-300"></span>
                 <span className="relative text-white flex items-center gap-x-3">

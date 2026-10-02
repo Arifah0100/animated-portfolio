@@ -8,7 +8,7 @@ export default function About() {
       id="about"
     >
       <motion.div
-        className="lg:w-1/2 flex items-center -mt-6 lg:-mt-16"
+        className="hidden lg:flex lg:w-1/2 items-center lg:-mt-16"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ type: "spring", stiffness: 80, damping: 10 }}
@@ -19,6 +19,7 @@ export default function About() {
           alt="About Me Illustration"
           className="w-[75%] mx-auto"
         />
+      </motion.div>
 
       <motion.div
         className="lg:w-1/2 text-white"
