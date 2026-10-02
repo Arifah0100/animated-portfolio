@@ -30,13 +30,13 @@ export default function Projects() {
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
-            className={`flex justify-between items-center flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
+            className={`flex justify-between items-center flex-col gap-10 lg:gap-12 ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 80, damping: 10, delay: index * 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="lg:w-[500px] w-full rounded-2xl overflow-hidden">
+                      <div className="lg:w-[500px] w-full rounded-2xl overflow-hidden">
               <img
                 className="w-full h-full hover:scale-105 transition-all duration-500 cursor-pointer object-cover"
                 src={project.image}

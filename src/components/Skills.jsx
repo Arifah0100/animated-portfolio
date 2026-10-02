@@ -83,12 +83,34 @@ function TimelineDate({ period, align = "left" }) {
 
 function TimelineCard({ exp, align = "left", index }) {
   return (
-    <motion.div initial={{ opacity: 0, x: align === "right" ? 30 : -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: index * 0.15, ease: "easeOut" }} viewport={{ once: true }} className={`timeline-card ${align === "right" ? "text-right" : "text-left"}`}>
-      <div className={`timeline-card-dot ${align === "right" ? "-right-1" : "-left-1"} hidden lg:block`} />
+    <motion.div
+      initial={{ opacity: 0, x: align === "right" ? 30 : -30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{
+        duration: 0.7,
+        delay: index * 0.15,
+        ease: "easeOut",
+      }}
+      viewport={{ once: true }}
+      className={`timeline-card ${align === "right" ? "text-right" : "text-left"}`}
+    >
+      <div
+        className={`timeline-card-dot ${
+          align === "right" ? "-right-1" : "-left-1"
+        } hidden lg:block`}
+      />
 
-      <div className={`flex items-center gap-4 ${align === "right" ? "justify-end" : "justify-start"}`}>
-        <div className="timeline-logo">
-          <img src={exp.logo} alt={`${exp.company} logo`} />
+      <div
+        className={`flex items-center gap-4 ${
+          align === "right" ? "justify-end" : "justify-start"
+        }`}
+      >
+        <div className="timeline-logo overflow-hidden">
+          <img
+            src={`${import.meta.env.BASE_URL}${exp.logo.replace(/^\/+/, "")}`}
+            alt={`${exp.company} logo`}
+            className="w-full h-full object-cover scale-125"
+          />
         </div>
 
         <div>
@@ -97,8 +119,13 @@ function TimelineCard({ exp, align = "left", index }) {
         </div>
       </div>
 
-      <p className={`timeline-description ${align === "right" ? "text-right" : "text-left"}`}>{exp.description}</p>
-      <div className={`timeline-link ${align === "right" ? "text-right" : "text-left"}`}>View Experience →</div>
+      <p
+        className={`timeline-description ${
+          align === "right" ? "text-right" : "text-left"
+        }`}
+      >
+        {exp.description}
+      </p>
     </motion.div>
   );
 }

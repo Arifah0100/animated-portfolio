@@ -56,6 +56,6 @@ export const experiences = [
     period: "Sept 2022 - Dec 2022",
     description:
       "Assisted with IT-related tasks, software troubleshooting, system support, and technical documentation. Gained practical experience in maintaining systems and supporting day-to-day technology operations.",
-    logo: "/assets/ascenders-logo.png"
+    logo: "/assets/ascenders-logo.jpg"
   }
 ];
